@@ -3,6 +3,7 @@ import { Link, useLoaderData, Form, useSubmit, useNavigation } from "@remix-run/
 import PostCard from "../components/PostCard";
 import mongoose from "mongoose";
 import { useEffect, useState } from "react";
+import { authenticator } from "../services/auth.server";
 
 export const meta = () => {
   return [{ title: "Remix Post App" }];
