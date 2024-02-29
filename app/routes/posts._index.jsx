@@ -9,6 +9,9 @@ export const meta = () => {
 };
 
 export async function loader({ request }) {
+  await authenticator.isAuthenticated(request, {
+    failureRedirect: "/signin",
+  });
   const { searchParams } = new URL(request.url);
   const q = searchParams.get("q");
   const likesRange = searchParams.get("likesRange"); // this adds the likesRange to the searchParams
